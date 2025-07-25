@@ -2,182 +2,158 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code, Brain, Target, Users, TrendingUp, Award } from "lucide-react";
+import { Zap, Cloud, Settings, Server } from "lucide-react";
 
 interface AssessmentHeroProps {
   onStartAssessment: () => void;
 }
 
 const AssessmentHero = ({ onStartAssessment }: AssessmentHeroProps) => {
-  const modules = [
-    {
-      icon: Target,
-      title: "Test Introduction",
-      description: "Understanding Full Stack .NET development and career paths"
-    },
-    {
-      icon: Brain,
-      title: "Psychometric Section",
-      description: "Personality fit, cognitive style, and motivation assessment"
-    },
-    {
-      icon: Code,
-      title: "Technical & Aptitude",
-      description: "Programming skills, C#/.NET knowledge, and problem-solving"
-    },
-    {
-      icon: TrendingUp,
-      title: "WISCAR Framework",
-      description: "Multi-dimensional readiness analysis"
-    },
-    {
-      icon: Award,
-      title: "Recommendation Engine",
-      description: "AI-generated personalized career guidance"
-    },
-    {
-      icon: Users,
-      title: "Career Guidance",
-      description: "Learning paths and skill development roadmap"
-    }
-  ];
-
-  const roles = [
-    ".NET Full Stack Developer",
-    "ASP.NET Core Developer", 
-    "Software Engineer (C#/.NET)",
-    "Backend Developer (C#)",
-    "Cloud Developer (.NET on Azure)"
-  ];
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
-      {/* Header */}
-      <div className="container mx-auto px-4 py-8">
-        <div className="text-center mb-12">
-          <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">
-            ⚙️ TECHNICAL FUTURES
-          </Badge>
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">
-            Should You Learn Full Stack .NET?
+    <>
+      {/* HERO SECTION */}
+      <div className="max-w-3xl mx-auto bg-blue-50 rounded-xl border border-blue-100 shadow-sm p-10 mb-8">
+        <div className="text-center">
+          <h1 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+            Discover Your .NET Career Potential
           </h1>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            A Psychometric, Technical, and Career Fit Assessment for Aspiring Full Stack .NET Developers
+          <p className="text-base md:text-lg text-gray-700 mb-6">
+            Take our comprehensive assessment to evaluate your psychological fit, technical readiness, and career alignment for a future in .NET development and administration.
           </p>
-        </div>
-
-        {/* Main CTA */}
-        <div className="text-center mb-16">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">
+            <div className="flex items-center text-gray-500 text-sm">
+              <Settings className="w-4 h-4 mr-2 text-blue-500" />
+              25-30 minutes
+            </div>
+            <div className="flex items-center text-gray-500 text-sm">
+              <Zap className="w-4 h-4 mr-2 text-purple-500" />
+              Personalized Results
+            </div>
+            <div className="flex items-center text-gray-500 text-sm">
+              <Server className="w-4 h-4 mr-2 text-green-500" />
+              Career Guidance
+            </div>
+          </div>
           <Button 
             onClick={onStartAssessment}
             size="lg"
-            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-12 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 text-lg font-semibold rounded-lg shadow-md transition-all duration-200"
           >
             Start Assessment
           </Button>
-          <p className="text-gray-500 mt-4">25-30 minutes • Personalized Results • No Registration Required</p>
         </div>
-
-        {/* Overview Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {modules.map((module, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow duration-200 border-0 shadow-md">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                    <module.icon className="h-6 w-6 text-blue-600" />
-                  </div>
-                  <Badge variant="outline" className="text-xs">
-                    {index + 1}
-                  </Badge>
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">{module.title}</h3>
-                <p className="text-gray-600 text-sm">{module.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* What is Full Stack .NET? */}
-        <Card className="mb-16 border-0 shadow-lg">
-          <CardContent className="p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">💡 What is Full Stack .NET?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div>
-                <h3 className="font-semibold text-blue-600 mb-2">Frontend</h3>
-                <p className="text-gray-600 text-sm">HTML, CSS, JavaScript/TypeScript, Blazor/React/Angular</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-green-600 mb-2">Backend</h3>
-                <p className="text-gray-600 text-sm">ASP.NET Core (C#)</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-purple-600 mb-2">Database</h3>
-                <p className="text-gray-600 text-sm">MS SQL Server / Entity Framework</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-orange-600 mb-2">DevOps/Hosting</h3>
-                <p className="text-gray-600 text-sm">Azure, IIS, Docker</p>
-              </div>
-            </div>
-            <p className="text-gray-600 mt-6">
-              Enterprise-focused, known for robust architecture, enterprise-level security, and scalable solutions.
-            </p>
-          </CardContent>
-        </Card>
-
-        {/* Career Roles */}
-        <Card className="mb-16 border-0 shadow-lg">
-          <CardContent className="p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">💼 Typical Career Roles</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {roles.map((role, index) => (
-                <div key={index} className="bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-lg">
-                  <p className="font-medium text-gray-800">{role}</p>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Ideal Traits */}
-        <Card className="border-0 shadow-lg">
-          <CardContent className="p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">🧠 Ideal Traits & Skills</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <ul className="space-y-3">
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                  <span className="text-gray-700">Logical and structured thinking</span>
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                  <span className="text-gray-700">Discipline and code hygiene</span>
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                  <span className="text-gray-700">Long-term project focus</span>
-                </li>
-              </ul>
-              <ul className="space-y-3">
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                  <span className="text-gray-700">Curiosity in systems design</span>
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                  <span className="text-gray-700">Backend workflow interest</span>
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                  <span className="text-gray-700">Patience with enterprise systems</span>
-                </li>
-              </ul>
-            </div>
-          </CardContent>
-        </Card>
       </div>
-    </div>
+
+      {/* WHAT IS .NET? SECTION */}
+      <Card className="max-w-4xl mx-auto bg-white border border-gray-200 shadow-sm rounded-xl mb-8">
+        <CardContent className="p-8">
+          <div className="flex items-center mb-4">
+            <Zap className="w-6 h-6 mr-2 text-blue-500" />
+            <h2 className="text-xl md:text-2xl font-bold text-blue-900">What is .NET?</h2>
+          </div>
+          <p className="text-gray-800 mb-6">
+            .NET is a powerful <span className="font-bold">cloud-based platform</span> that specializes in <span className="font-bold">enterprise workflow automation</span>. It empowers organizations to streamline business processes and drive digital transformation across various departments and functions.
+          </p>
+          <div className="flex flex-col md:flex-row gap-4">
+            <div className="flex-1 bg-blue-50 rounded-lg p-4">
+              <h3 className="font-semibold text-blue-700 mb-1">Cloud Platform</h3>
+              <p className="text-blue-700 text-sm">Scalable, secure, and accessible from anywhere</p>
+            </div>
+            <div className="flex-1 bg-green-50 rounded-lg p-4">
+              <h3 className="font-semibold text-green-700 mb-1">Workflow Automation</h3>
+              <p className="text-green-700 text-sm">Streamline processes and reduce manual work</p>
+            </div>
+            <div className="flex-1 bg-purple-50 rounded-lg p-4">
+              <h3 className="font-semibold text-purple-700 mb-1">Enterprise Scale</h3>
+              <p className="text-purple-700 text-sm">Used by Fortune 500 companies worldwide</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* CAREER OPPORTUNITIES */}
+      <Card className="max-w-4xl mx-auto bg-white border border-gray-200 shadow-sm rounded-xl mb-8">
+        <CardContent className="p-8">
+          <div className="flex items-center mb-4">
+            <svg className="w-6 h-6 mr-2 text-green-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 11c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3zm0 0c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3zm0 0v2m0 4v.01" /></svg>
+            <h2 className="text-xl md:text-2xl font-bold text-blue-900">Career Opportunities</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="border border-gray-200 rounded-lg p-4 bg-white">
+              <div className="font-semibold text-gray-900">.NET Full Stack Developer</div>
+              <div className="text-gray-600 text-sm">Build workflows and automation</div>
+            </div>
+            <div className="border border-gray-200 rounded-lg p-4 bg-white">
+              <div className="font-semibold text-gray-900">ASP.NET Core Developer</div>
+              <div className="text-gray-600 text-sm">Manage platform and users</div>
+            </div>
+            <div className="border border-gray-200 rounded-lg p-4 bg-white">
+              <div className="font-semibold text-gray-900">ITSM Consultant</div>
+              <div className="text-gray-600 text-sm">Design enterprise processes</div>
+            </div>
+            <div className="border border-gray-200 rounded-lg p-4 bg-white">
+              <div className="font-semibold text-gray-900">Business Analyst</div>
+              <div className="text-gray-600 text-sm">Bridge tech and business needs</div>
+            </div>
+            <div className="border border-gray-200 rounded-lg p-4 bg-white">
+              <div className="font-semibold text-gray-900">Platform Architect</div>
+              <div className="text-gray-600 text-sm">Advanced system design</div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* IDEAL TRAITS & SKILLS */}
+      <Card className="max-w-4xl mx-auto bg-white border border-gray-200 shadow-sm rounded-xl mb-8">
+        <CardContent className="p-8">
+          <div className="flex items-center mb-4">
+            <svg className="w-6 h-6 mr-2 text-orange-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 20h9" /><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m0 0H3" /></svg>
+            <h2 className="text-xl md:text-2xl font-bold text-blue-900">Ideal Traits & Skills</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <ul className="space-y-3">
+              <li className="flex items-center"><div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div><span className="text-gray-900">Strong analytical thinking</span></li>
+              <li className="flex items-center"><div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div><span className="text-gray-900">Logical problem-solving</span></li>
+              <li className="flex items-center"><div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div><span className="text-gray-900">Comfort with scripting</span></li>
+            </ul>
+            <ul className="space-y-3">
+              <li className="flex items-center"><div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div><span className="text-gray-900">Process-oriented mindset</span></li>
+              <li className="flex items-center"><div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div><span className="text-gray-900">Interest in IT service delivery</span></li>
+              <li className="flex items-center"><div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div><span className="text-gray-900">Attention to detail</span></li>
+            </ul>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* WHAT YOU'LL DISCOVER */}
+      <Card className="max-w-4xl mx-auto bg-white border border-gray-200 shadow-sm rounded-xl mb-8">
+        <CardContent className="p-8">
+          <h2 className="text-2xl font-bold text-blue-900 mb-6">What You'll Discover</h2>
+          <div className="flex flex-col md:flex-row gap-6">
+            {/* Assessment Modules Box */}
+            <div className="flex-1 bg-gray-50 border border-gray-200 rounded-lg p-6 shadow-sm">
+              <h3 className="font-semibold text-gray-900 mb-4">Assessment Modules:</h3>
+              <ul className="space-y-4">
+                <li className="flex items-center"><span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-blue-100 text-blue-700 font-bold mr-3">1</span><span className="text-gray-900">Psychological Fit Evaluation</span></li>
+                <li className="flex items-center"><span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-green-100 text-green-700 font-bold mr-3">2</span><span className="text-gray-900">Technical Aptitude Testing</span></li>
+                <li className="flex items-center"><span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-orange-100 text-orange-700 font-bold mr-3">3</span><span className="text-gray-900">WISCAR Framework Analysis</span></li>
+              </ul>
+            </div>
+            {/* Your Results Include Box */}
+            <div className="flex-1 bg-gray-50 border border-gray-200 rounded-lg p-6 shadow-sm">
+              <h3 className="font-semibold text-gray-900 mb-4">Your Results Include:</h3>
+              <ul className="list-disc list-inside text-gray-800 space-y-2">
+                <li>Personalized fit score (0-100)</li>
+                <li>Detailed trait analysis</li>
+                <li>Technical readiness assessment</li>
+                <li>Career pathway recommendations</li>
+                <li>Next steps and learning resources</li>
+              </ul>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </>
   );
 };
 
